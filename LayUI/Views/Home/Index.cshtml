@@ -1,31 +1,59 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "LayUI-Home";
+    Layout = null;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>开始使用layui</title>
+    <link href="~/Content/css/layui.css" rel="stylesheet" />
+</head>
+<body>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <!-- 你的HTML代码 -->
+    <div class="layui-container">
+        常规布局（以中型屏幕桌面为例）：
+        <div class="layui-row">
+            <div class="layui-col-md9">
+                你的内容 9/12
+            </div>
+            <div class="layui-col-md3">
+                你的内容 3/12
+            </div>
+        </div>
+
+        移动设备、平板、桌面端的不同表现：
+        <div class="layui-row">
+            <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+                移动：6/12 | 平板：6/12 | 桌面：4/12
+            </div>
+            <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+                移动：6/12 | 平板：6/12 | 桌面：4/12
+            </div>
+            <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+                移动：4/12 | 平板：12/12 | 桌面：4/12
+            </div>
+            <div class="layui-col-xs4 layui-col-sm7 layui-col-md8">
+                移动：4/12 | 平板：7/12 | 桌面：8/12
+            </div>
+            <div class="layui-col-xs4 layui-col-sm5 layui-col-md4">
+                移动：4/12 | 平板：5/12 | 桌面：4/12
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <script src="~/Scripts/layui.js"></script>
+    <script src="~/Scripts/layui.all.js"></script>
+    <script>
+        //一般直接写在一个js文件中
+        layui.use(['layer', 'form'], function () {
+            var layer = layui.layer
+                , form = layui.form;
+
+            layer.msg('Hello World');
+        });
+    </script>
+</body>
+</html>
